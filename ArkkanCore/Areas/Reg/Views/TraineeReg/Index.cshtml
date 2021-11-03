@@ -1,0 +1,157 @@
+﻿@inject ArkanCore.MVC.Resources.LocService SharedLocalizer
+@using ArkkanCore.DAL.Models 
+@{
+    //BloodGroups BloodGroupDetailDetail = Model.BloodGroupDetailDetail;
+    bool isEdit = false;//(BloodGroupDetailDetail != null);
+    List<NatMa> natList = Model.natList;
+}
+
+
+<form id="frmAction">
+    <input type="hidden" id="ACTION_TYPE" name="ACTION_TYPE" value="@(isEdit ? "update" : "save")" />
+
+    <div class="subheader">
+        <h1 class="subheader-title">
+            <i class='subheader-icon fal fa-list'></i> @SharedLocalizer.GetLocalizedHtmlString("CoursePayments") <span class='fw-300'></span> <sup class='badge badge-primary fw-500'></sup>
+            @*<small>@SharedLocalizer.GetLocalizedHtmlString("CoursePaymentsListing") </small>*@
+        </h1>
+
+        @*<div class="subheader-block">
+                <a href="@(Lib.Settings.baseUrl)category/action" class="btn btn-primary"><i class="fal fa-plus fa-fw"></i> @SharedLocalizer.GetLocalizedHtmlString("AddNew")</a>
+            </div>*@
+    </div>
+
+    <!-- Your main content goes below here: -->
+    <div class="row">
+
+        <div class="col-xl-12">
+
+
+            <div id="panel-1" class="panel">
+                <div class="panel-hdr">
+                    <h2>
+                        @SharedLocalizer.GetLocalizedHtmlString("CoursePaymentsListing") <span class="fw-300"><i></i></span>
+                    </h2>
+                    <div class="panel-toolbar">
+                        @*<button class="btn btn-panel" data-action="panel-collapse" data-toggle="tooltip" data-offset="0,10" data-original-title="Collapse"></button>*@
+                        <a href="javascript:void(0)" class="btn btn-panel" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></a>
+                        @*<button class="btn btn-panel" data-action="panel-close" data-toggle="tooltip" data-offset="0,10" data-original-title="Close"></button>*@
+                    </div>
+                </div>
+                <div class="panel-container show">
+                    <div class="panel-content  ">
+                        @*<div class="panel-tag">It stash and was even had of collection the latest story still every or times derive come way. Travelling business ill. Helplessly starting didn't should he her bad will so through audiences to the supported congress, if card with was way allows century quarter the control village for of payload.</div>*@
+
+
+                        <div class="form-row">
+
+                            @*<div class="col-md-3 mb-3">
+                                <label class="form-label" for="StudentCode">@SharedLocalizer.GetLocalizedHtmlString("StudentCode")<span class="text-danger"></span>: </label>
+                                <input type="text" class="form-control" id="StudentCode" name="StudentCode" placeholder="@SharedLocalizer.GetLocalizedHtmlString("StudentCode")" value="123" required>
+                            </div>*@
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label" for="branchcode">@SharedLocalizer.GetLocalizedHtmlString("branchcode")<span class="text-danger"></span>: </label>
+                                <input type="number" class="form-control" id="branchcode" name="branchcode" placeholder="@SharedLocalizer.GetLocalizedHtmlString("branchcode")" value="123" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label" for="idno">@SharedLocalizer.GetLocalizedHtmlString("idno")<span class="text-danger"></span>: </label>
+                                <input type="text" class="form-control" id="idno" name="idno" placeholder="@SharedLocalizer.GetLocalizedHtmlString("idno")" value="123" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label" for="StudentNmA">@SharedLocalizer.GetLocalizedHtmlString("StudentNmA")<span class="text-danger"></span>: </label>
+                                <input type="text" class="form-control" id="StudentNmA" name="StudentNmA" placeholder="@SharedLocalizer.GetLocalizedHtmlString("StudentNmA")" value="123" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label" for="JobCode">@SharedLocalizer.GetLocalizedHtmlString("JobCode")<span class="text-danger"></span>: </label>
+                                <input type="number" class="form-control" id="JobCode" name="JobCode" placeholder="@SharedLocalizer.GetLocalizedHtmlString("JobCode")" value="123" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label" for="idEnddate">@SharedLocalizer.GetLocalizedHtmlString("idEnddate")<span class="text-danger"></span>: </label>
+                                <input type="number" class="form-control" id="idEnddate" name="idEnddate" placeholder="@SharedLocalizer.GetLocalizedHtmlString("idEnddate")" value="123" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label" for="NatCode">@SharedLocalizer.GetLocalizedHtmlString("NatCode")<span class="text-danger"></span>: </label>
+                                <select class="form-control" id="NatCode" name="NatCode" required>
+                                    <option></option>
+                                    @foreach (var item in natList)
+                                    {
+                                        <option value="@item.NatCode">@item.NatNmA</option>
+                                    }
+                                </select>
+
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label" for="CompanyCode">@SharedLocalizer.GetLocalizedHtmlString("CompanyCode")<span class="text-danger"></span>: </label>
+                                <input type="number" class="form-control" id="CompanyCode" name="CompanyCode" placeholder="@SharedLocalizer.GetLocalizedHtmlString("CompanyCode")" value="123" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label" for="JobTypeCode">@SharedLocalizer.GetLocalizedHtmlString("JobTypeCode")<span class="text-danger"></span>: </label>
+                                <input type="number" class="form-control" id="JobTypeCode" name="JobTypeCode" placeholder="@SharedLocalizer.GetLocalizedHtmlString("JobTypeCode")" value="123" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label" for="gender">@SharedLocalizer.GetLocalizedHtmlString("gender")<span class="text-danger"></span>: </label>
+                                <input type="number" class="form-control" id="gender" name="gender" placeholder="@SharedLocalizer.GetLocalizedHtmlString("gender")" value="123" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label" for="IdSource">@SharedLocalizer.GetLocalizedHtmlString("IdSource")<span class="text-danger"></span>: </label>
+                                <input type="text" class="form-control" id="IdSource" name="IdSource" placeholder="@SharedLocalizer.GetLocalizedHtmlString("IdSource")" value="123" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label" for="IdType">@SharedLocalizer.GetLocalizedHtmlString("IdType")<span class="text-danger"></span>: </label>
+                                <input type="number" class="form-control" id="IdType" name="IdType" placeholder="@SharedLocalizer.GetLocalizedHtmlString("IdType")" value="123" required>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section scripts{
+
+    <script>
+
+        $('#frmAction').on('submit', function (e) {
+            e.preventDefault();
+            var actionType = $('#ACTION_TYPE').val();
+
+            //confirmAction('Confirm ?', 'Are you sure you want to save changes ?', 'info', 'Yes', 'No').then(function (result) {
+            //    if (result.value == true) {
+
+            var params = $('#frmAction').serialize();
+            $.ajax({
+                url: getApplicationName() + "reg/traineereg/" + actionType,
+                async: false,
+                type: "POST",
+                data: params,
+                success: function (data) {
+                    if (data.result.isError != true) {
+                        //showMsg('Saved !', 'Record has been saved !', 'success');
+                        alert('Saved!');
+                        //setTimeout(function () {
+                        //    window.location = getApplicationName() + 'admin/BloodGroups';
+                        //}, 500);
+                    }
+                    else if (data.result.msg != '') {
+                        //showMsg('Save Failed !', data.result.msg, 'error');
+                        alert(data.result.msg);
+                    }
+                    else {
+                        //showMsg('Save Failed !', 'Something went wrong. Try again', 'error');
+                        alert('Something went wrong');
+                    }
+                }
+            });
+        });
+                //});
+
+
+    </script>
+
+}

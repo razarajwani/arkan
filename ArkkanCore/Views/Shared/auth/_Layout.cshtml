@@ -1,0 +1,125 @@
+﻿
+@inject ArkanCore.MVC.Resources.LocService SharedLocalizer
+@{
+    string _baseUrl = Lib.Settings.baseUrl;
+
+    var requestCulture = Context.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>();
+    string _lang = requestCulture.RequestCulture.UICulture.Name;
+
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>
+        @SharedLocalizer.GetLocalizedHtmlString("AlArkkanTrainingCenter")
+    </title>
+    <meta name="description" content="Login">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
+    <!-- Call App Mode on ios devices -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Remove Tap Highlight on Windows Phone IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- base css -->
+    <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="@(_baseUrl)admin/dist/css/vendors.bundle.css">
+    <link id="appbundle" rel="stylesheet" media="screen, print" href="@(_baseUrl)admin/dist/css/app.bundle.css">
+    <link id="mytheme" rel="stylesheet" media="screen, print" href="#">
+    <link id="myskin" rel="stylesheet" media="screen, print" href="@(_baseUrl)admin/dist/css/skins/skin-master.css">
+    <!-- Place favicon.ico in the root directory -->
+    @*<link rel="apple-touch-icon" sizes="180x180" href="@(_baseUrl)admin/dist/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="@(_baseUrl)admin/dist/img/favicon/favicon-32x32.png">
+    <link rel="mask-icon" href="@(_baseUrl)admin/dist/img/favicon/safari-pinned-tab.svg" color="#5bbad5">*@
+    <link rel="stylesheet" media="screen, print" href="@(_baseUrl)admin/dist/css/fa-brands.css">
+
+    <!-- #FAVICONS -->
+    <link rel="shortcut icon" href="@(_baseUrl)admin/dist/img/favicon/fav.png" type="image/x-icon">
+    <link rel="icon" href="@(_baseUrl)admin/dist/img/favicon/fav.png" type="image/x-icon">
+
+    @if (_lang == "ar")
+    {
+        <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="@(_baseUrl)admin/dist/css/vendors.bundle-rtl.css">
+        <link id="appbundle" rel="stylesheet" media="screen, print" href="@(_baseUrl)admin/dist/css/app.bundle-rtl.css">
+        <link id="arabicFonts" rel="stylesheet" href="@(_baseUrl)arabicFonts/ArabicFonts.css">
+    }
+    else
+    {
+        <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="@(_baseUrl)admin/dist/css/vendors.bundle.css">
+        <link id="appbundle" rel="stylesheet" media="screen, print" href="@(_baseUrl)admin/dist/css/app.bundle.css">
+    }
+
+    <style>
+        .page-logo, .page-sidebar, .nav-footer, .bg-brand-gradient {
+            background-color: #753433;
+        }
+
+        .btn-primary, .btn-primary:hover {
+            background-color: #753433;
+            border-color: #753433;
+        }
+
+        .form-label {
+            color: #753433;
+        }
+    </style>
+
+    <script>
+        var _baseApi = 'http://localhost/arkanCoreApi/api/';
+    </script>
+</head>
+<!-- BEGIN Body -->
+<body class="">
+    <div class="page-wrapper auth">
+        <div class="page-inner bg-brand-gradient">
+            <div class="page-content-wrapper bg-transparent m-0">
+                <div class="height-10 w-100 shadow-lg px-4 bg-brand-gradient">
+                    <div class="d-flex align-items-center container p-0">
+                        <div class="page-logo width-mobile-auto m-0 align-items-center justify-content-center p-0 bg-transparent bg-img-none shadow-0 height-9 border-0">
+                            <a href="javascript:void(0)" class="page-logo-link press-scale-down d-flex align-items-center">
+                                <img src="@(_baseUrl)admin/dist/img/favicon/fav.png" alt="Al Arkkan Training Center WebApp" aria-roledescription="logo">
+                                <span class="page-logo-text mr-1">@SharedLocalizer.GetLocalizedHtmlString("AlArkkanTrainingCenter")</span>
+                            </a>
+                        </div>
+                        @RenderSection("topRight", false)
+                        &nbsp;&nbsp;
+                        <div>
+                            @if (_lang == "ar")
+                            {
+                                <form asp-controller="SetLanguage" asp-area="" asp-action="SetLanguage" asp-route-returnUrl="/auth" method="post" role="form">
+                                    <input type="hidden" name="culture" value="en" />
+                                    <button type="submit" class="btn btn-sm btn-default">English</button>
+                                </form>
+                            }
+                            else
+                            {
+                                <form asp-controller="SetLanguage" asp-area="" asp-action="SetLanguage" asp-route-returnUrl="/auth" method="post" role="form">
+                                    <input type="hidden" name="culture" value="ar" />
+                                    <button type="submit" class="btn btn-sm btn-default">Arabic</button>
+                                </form>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+                <div class="flex-1" style="background: url(img/svg/pattern-1.svg) no-repeat center bottom fixed; background-size: cover;">
+                    <div class="container py-4 py-lg-5 my-lg-3 px-4 px-sm-0">
+
+                        @RenderBody()
+                        <div class="position-absolute pos-bottom pos-left pos-right p-3 text-center text-white">
+                            @System.DateTime.Now.ToString("yyyy") © @SharedLocalizer.GetLocalizedHtmlString("AlArkkanTrainingCenter")
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="@(_baseUrl)admin/dist/js/vendors.bundle.js"></script>
+    <script src="@(_baseUrl)admin/dist/js/app.bundle.js"></script>
+  
+    @RenderSection("scripts",false)
+</body>
+<!-- END Body -->
+</html>

@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>ArkanCore.MVC</AssemblyName>
+    <RootNamespace>ArkanCore.MVC</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\admin\src\custom\plugins\slider-revolution\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\Reg\Views\TraineeReg\Index.cshtml" />
+    <None Include="Areas\Reg\Views\_ViewStart.cshtml" />
+    <None Include="Areas\Reports\Views\CoursePayments\Index.cshtml" />
+    <None Include="Areas\Reports\Views\_ViewStart.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ArkanCore.DAL\ArkanCore.DAL.csproj" />
+  </ItemGroup>
+
+</Project>

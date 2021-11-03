@@ -1,0 +1,73 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Interfaces\IAbsentExamMaService.cs" />
+    <Compile Remove="Interfaces\IAbsentMaService.cs" />
+    <Compile Remove="Interfaces\IAllCourseService.cs" />
+    <Compile Remove="Interfaces\IAllReleationService.cs" />
+    <Compile Remove="Interfaces\IAmanaCardService.cs" />
+    <Compile Remove="Interfaces\IAnswerMaService.cs" />
+    <Compile Remove="Interfaces\IBadalFaeedMaService.cs" />
+    <Compile Remove="Interfaces\IBaladyaMaService.cs" />
+    <Compile Remove="Interfaces\IBankMaService.cs" />
+    <Compile Remove="Interfaces\IBranchMaService.cs" />
+    <Compile Remove="Interfaces\ICardsDeductMaService.cs" />
+    <Compile Remove="Interfaces\ICertificateHmaService.cs" />
+    <Compile Remove="Interfaces\ICertificateTmaService.cs" />
+    <Compile Remove="Interfaces\ICertifTypeMaService.cs" />
+    <Compile Remove="Interfaces\IChangeIdlogService.cs" />
+    <Compile Remove="Interfaces\ICompanyMapService.cs" />
+    <Compile Remove="Interfaces\ICompanyMaService.cs" />
+    <Compile Remove="Interfaces\IConstMaService.cs" />
+    <Compile Remove="Interfaces\ICourseDegreeMas1417Service.cs" />
+    <Compile Remove="Interfaces\ICourseDegreeMaService.cs" />
+    <Compile Remove="Interfaces\ICourseLangMaService.cs" />
+    <Compile Remove="Interfaces\ICourseMaService.cs" />
+    <Compile Remove="Interfaces\ICourseMoveMaService.cs" />
+    <Compile Remove="Interfaces\ICourseStudentMas180114Service.cs" />
+    <Compile Remove="Interfaces\ICourseStudentMas716Service.cs" />
+    <Compile Remove="Interfaces\ICourseStudentMaService.cs" />
+    <Compile Remove="Interfaces\ICourseTransLogMaService.cs" />
+    <Compile Remove="Interfaces\ICustodyCancelMaService.cs" />
+    <Compile Remove="Interfaces\ICustodyMaService.cs" />
+    <Compile Remove="Interfaces\IDateTableService.cs" />
+    <Compile Remove="Interfaces\IDepMaService.cs" />
+    <Compile Remove="Interfaces\IEmpMaService.cs" />
+    <Compile Remove="Interfaces\IEssamStudService.cs" />
+    <Compile Remove="Interfaces\IExamDegreeService.cs" />
+    <Compile Remove="Interfaces\IFieldsMaService.cs" />
+    <Compile Remove="Interfaces\IHcrefusedService.cs" />
+    <Compile Remove="Interfaces\IHealthCardService.cs" />
+    <Compile Remove="Interfaces\IHealthResultMaService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,45 @@
+﻿@inject ArkanCore.MVC.Resources.LocService SharedLocalizer
+@using ArkkanCore.DAL.ViewModels
+@{
+    List<vmCoursePaymentsReport> coursePaymentsList = Model.coursePaymentsList;
+}
+
+<table class="table m-0 table-bordered dtTable">
+    <thead class="thead-light ">
+        <tr class="text-center">
+            <th style="width:30px">@SharedLocalizer.GetLocalizedHtmlString("PK")</th>
+            <th>@SharedLocalizer.GetLocalizedHtmlString("Code")</th>
+            <th>@SharedLocalizer.GetLocalizedHtmlString("Course")</th>
+            <th>@SharedLocalizer.GetLocalizedHtmlString("Total")</th>
+        </tr>
+    </thead>
+    <tfoot style="display:table-row-group">
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </tfoot>
+    <tbody>
+        @foreach (var item in coursePaymentsList)
+        {
+        <tr class="text-center">
+            <td>@item.pk</td>
+            <td>@item.gcode</td>
+            <td class="text-left">@item.coursenma</td>
+            <td>@item.total</td>
+        </tr>
+    }
+      
+        </tbody>
+    </table>
+
+
+
+<script>
+    $(function () {
+
+        _initDatatable('.dtTable');
+    })
+</script>

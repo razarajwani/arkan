@@ -1,0 +1,100 @@
+﻿@inject ArkanCore.MVC.Resources.LocService SharedLocalizer
+
+@{
+    string _baseUrl = Convert.ToString(ViewData["baseUrl"]);
+}
+
+<ul id="js-nav-menu" class="nav-menu">
+    <li class="active">
+        <a href="@(_baseUrl)" title="Blank Project" data-filter-tags="blank page">
+            <i class="fal fa-chart-bar"></i>
+            <span class="nav-link-text" data-i18n="nav.blankpage">@SharedLocalizer.GetLocalizedHtmlString("Dashboard")</span>
+        </a>
+    </li>
+    @*<li class="nav-title">@SharedLocalizer.GetLocalizedHtmlString("GeneralSettings") </li>*@
+    <li class="">
+        <a href="#" title="Category" data-filter-tags="category">
+            <i class="fal fa-sitemap"></i>
+            <span class="nav-link-text" data-i18n="nav.Profile">@SharedLocalizer.GetLocalizedHtmlString("Profile")</span>
+        </a>
+        
+    </li>
+    <li class="">
+        <a href="#" title="Category" data-filter-tags="Registrations">
+            <i class="fal fa-sitemap"></i>
+            <span class="nav-link-text" data-i18n="nav.Profile">@SharedLocalizer.GetLocalizedHtmlString("Registrations")</span>
+        </a>
+        <ul>
+            <li>
+                <a href="@(_baseUrl)reg/traineereg" title="Menu child" data-filter-tags="utilities menu child">
+                    <span class="nav-link-text" data-i18n="nav.utilities_menu_child">@SharedLocalizer.GetLocalizedHtmlString("TraineeRegistration") </span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="">
+        <a href="#" title="Courses" data-filter-tags="Courses">
+            <i class="fal fa-sitemap"></i>
+            <span class="nav-link-text" data-i18n="nav.Courses">@SharedLocalizer.GetLocalizedHtmlString("Courses")</span>
+        </a>
+    </li>
+    <li class="">
+        <a href="#" title="Trainers" data-filter-tags="Trainers">
+            <i class="fal fa-sitemap"></i>
+            <span class="nav-link-text" data-i18n="nav.Trainers">@SharedLocalizer.GetLocalizedHtmlString("Trainers")</span>
+        </a>
+    </li>
+    <li class="">
+        <a href="#" title="Settings" data-filter-tags="Settings">
+            <i class="fal fa-cogs"></i>
+            <span class="nav-link-text" data-i18n="nav.Settings">@SharedLocalizer.GetLocalizedHtmlString("Settings")</span>
+        </a>
+    </li>
+    <li class="">
+        <a href="#" title="Financial" data-filter-tags="Financial">
+            <i class="fal fa-sitemap"></i>
+            <span class="nav-link-text" data-i18n="nav.Financial">@SharedLocalizer.GetLocalizedHtmlString("Financial")</span>
+        </a>
+        <ul>
+            <li>
+                <a href="@(_baseUrl)reports/CoursePayments" title="Menu child" data-filter-tags="utilities menu child">
+                    <span class="nav-link-text" data-i18n="nav.utilities_menu_child">@SharedLocalizer.GetLocalizedHtmlString("CoursePayments") </span>
+                </a>
+            </li>
+            <li>
+                <a href="@(_baseUrl)reports/StudentPayments" title="Menu child" data-filter-tags="utilities menu child">
+                    <span class="nav-link-text" data-i18n="nav.utilities_menu_child">@SharedLocalizer.GetLocalizedHtmlString("StudentPayments") </span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="">
+        <a href="#" title="Reports" data-filter-tags="Reports">
+            <i class="fal fa-print-slash"></i>
+            <span class="nav-link-text" data-i18n="nav.Reports">@SharedLocalizer.GetLocalizedHtmlString("Reports")</span>
+        </a>
+    </li>
+
+    <!-- Example of open and active states -->
+    @*<li class="active ">
+            <a href="#" title="Category" data-filter-tags="category">
+                <i class="fal fa-plus"></i>
+                <span class="nav-link-text" data-i18n="nav.category">Open Item</span>
+            </a>
+            <ul>
+                <li class="active open">
+                    <a href="javascript:void(0);" title="Menu child" data-filter-tags="utilities menu child">
+                        <span class="nav-link-text" data-i18n="nav.utilities_menu_child">Open Sub-category</span>
+                    </a>
+                    <ul>
+                        <li class="active">
+                            <a href="javascript:void(0);" title="Sublevel Item" data-filter-tags="utilities menu child sublevel item">
+                                <span class="nav-link-text" data-i18n="nav.utilities_menu_child_sublevel_item">Active Item</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>*@
+</ul>

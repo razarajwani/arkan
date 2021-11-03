@@ -1,0 +1,75 @@
+﻿@inject ArkanCore.MVC.Resources.LocService SharedLocalizer
+@using ArkkanCore.DAL.ViewModels
+@{
+    List<vmStudentPaymentsReport> StudentPaymentsList = Model.StudentPaymentsList;
+}
+
+<table class="table m-0 table-bordered dtTable">
+    <thead class="thead-light ">
+        <tr class="text-center">
+            <th>@SharedLocalizer.GetLocalizedHtmlString("voucherno")</th>
+            <th>@SharedLocalizer.GetLocalizedHtmlString("gdate")</th>
+            <th>@SharedLocalizer.GetLocalizedHtmlString("idno")</th>
+            <th>@SharedLocalizer.GetLocalizedHtmlString("studentnma")</th>
+            <th>@SharedLocalizer.GetLocalizedHtmlString("natnma")</th>
+            <th>@SharedLocalizer.GetLocalizedHtmlString("coursenma")</th>
+            <th>@SharedLocalizer.GetLocalizedHtmlString("companynma")</th>
+            <th>@SharedLocalizer.GetLocalizedHtmlString("courselangnma")</th>
+            <th>@SharedLocalizer.GetLocalizedHtmlString("levelnma")</th>
+            <th>@SharedLocalizer.GetLocalizedHtmlString("courseno")</th>
+            <th>@SharedLocalizer.GetLocalizedHtmlString("value")</th>
+            <th>@SharedLocalizer.GetLocalizedHtmlString("status")</th>
+            <th>@SharedLocalizer.GetLocalizedHtmlString("companynma2")</th>
+            <th>@SharedLocalizer.GetLocalizedHtmlString("pk")</th>
+        </tr>
+    </thead>
+    <tfoot style="display:table-row-group">
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </tfoot>
+    <tbody>
+        @foreach (var item in StudentPaymentsList)
+        {
+        <tr class="text-center">
+            <td>@item.voucherno</td>
+            <td>@item.gdate</td>
+            <td>@item.idno</td>
+            <td>@item.studentnma</td>
+            <td>@item.natnma</td>
+            <td>@item.coursenma</td>
+            <td>@item.companynma</td>
+            <td>@item.courselangnma</td>
+            <td>@item.levelnma</td>
+            <td>@item.courseno</td>
+            <td>@item.value</td>
+            <td>@item.status</td>
+            <td>@item.companynma2</td>
+            <td>@item.pk</td>
+        </tr>
+    }
+      
+        </tbody>
+    </table>
+
+
+
+<script>
+    $(function () {
+
+        _initDatatable('.dtTable');
+    })
+</script>

@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArkanCore.MVC", "ArkkanCore\ArkanCore.MVC.csproj", "{8404BF07-EB6C-4222-AC5E-6E3DD44F3E77}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArkanCore.DAL", "ArkanCore.DAL\ArkanCore.DAL.csproj", "{3D1669BB-CDA2-4D31-852B-17FFAFC0405B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArkanCore.API", "ArkanCore.API\ArkanCore.API.csproj", "{16C460AA-8304-4AE7-9A47-1DC24BE71113}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8404BF07-EB6C-4222-AC5E-6E3DD44F3E77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8404BF07-EB6C-4222-AC5E-6E3DD44F3E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8404BF07-EB6C-4222-AC5E-6E3DD44F3E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8404BF07-EB6C-4222-AC5E-6E3DD44F3E77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D1669BB-CDA2-4D31-852B-17FFAFC0405B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D1669BB-CDA2-4D31-852B-17FFAFC0405B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D1669BB-CDA2-4D31-852B-17FFAFC0405B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D1669BB-CDA2-4D31-852B-17FFAFC0405B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16C460AA-8304-4AE7-9A47-1DC24BE71113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16C460AA-8304-4AE7-9A47-1DC24BE71113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16C460AA-8304-4AE7-9A47-1DC24BE71113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16C460AA-8304-4AE7-9A47-1DC24BE71113}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFDAE11F-5393-47F1-A2B4-D39A76F23D88}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://razarajwani.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ArkanCore.DAL\\ArkanCore.DAL.csproj
+		SccProjectName1 = ArkanCore.DAL
+		SccLocalPath1 = ArkanCore.DAL
+		SccProjectUniqueName2 = ArkkanCore\\ArkanCore.MVC.csproj
+		SccProjectName2 = ArkkanCore
+		SccLocalPath2 = ArkkanCore
+		SccProjectUniqueName3 = ArkanCore.API\\ArkanCore.API.csproj
+		SccProjectName3 = ArkanCore.API
+		SccLocalPath3 = ArkanCore.API
+	EndGlobalSection
+EndGlobal
